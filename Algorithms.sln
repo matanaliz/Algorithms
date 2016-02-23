@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Levenshtein_distance", "Levenshtein_distance\Levenshtein_distance.vcxproj", "{3468E656-11A8-4E97-ADFF-13973ED0684C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unittest_Levenshtein_distance", "unittest_Levenshtein_distance\unittest_Levenshtein_distance.vcxproj", "{70491391-F6E2-496B-82B0-60BB841BF2F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3468E656-11A8-4E97-ADFF-13973ED0684C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3468E656-11A8-4E97-ADFF-13973ED0684C}.Debug|Win32.Build.0 = Debug|Win32
+		{3468E656-11A8-4E97-ADFF-13973ED0684C}.Release|Win32.ActiveCfg = Release|Win32
+		{3468E656-11A8-4E97-ADFF-13973ED0684C}.Release|Win32.Build.0 = Release|Win32
+		{70491391-F6E2-496B-82B0-60BB841BF2F7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{70491391-F6E2-496B-82B0-60BB841BF2F7}.Debug|Win32.Build.0 = Debug|Win32
+		{70491391-F6E2-496B-82B0-60BB841BF2F7}.Release|Win32.ActiveCfg = Release|Win32
+		{70491391-F6E2-496B-82B0-60BB841BF2F7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
