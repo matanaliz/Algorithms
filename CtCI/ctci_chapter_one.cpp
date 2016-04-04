@@ -5,30 +5,31 @@
 
 bool allUnique(const std::string& str)
 {
+	// Get all chars into set. Compare sizes of containers.
 	std::set<char> charset(std::begin(str), std::end(str));
 	return charset.size() == str.size();
 }
 
 void reverseString(char* str)
 {
+	if (!str)
+		return;
+
 	size_t len = 0;
 	char* tmp = str;
-	while (0 != *tmp++) len++;
+	while (*tmp++) len++;
 
 	for (size_t i = 0; i < len / 2; i++)
-	{
-		std::swap(*(str+i), *(str+len-i - 1));
-	}
+		std::swap(*(str + i), *(str + len - i - 1));
 }
 
 void replaceSpace(char* str, size_t len)
 {
-	size_t space_count = std::count(str, str + len, ' ');
-	
-	//for (size_t i = 0; i < len; i++)
-	//	if (' ' == str[i])
-	//		space_count++;
+	// Invalid args
+	if (!str || len <= 0)
+		return;
 
+	size_t space_count = std::count(str, str + len, ' ');
 	size_t extended_length = len + space_count * 2;
 	for (size_t i = len; i > 0; i--)
 	{
@@ -50,7 +51,7 @@ bool isPermutation(const std::string& a, const std::string& b)
 	if (a.size() != b.size())
 		return false;
 	
-	// Here is copy because const 
+	// Here is copy because of const 
 	std::string sorted_a = a;
 	std::string sorted_b = b;
 
@@ -64,7 +65,7 @@ std::string compressString(const std::string& str)
 {
 	std::stringstream ss;
 
-	for (auto i = std::begin(str); i != std::end(str); /**/)
+	for (auto i = std::begin(str); i != std::end(str); /*will advance in body*/)
 	{ 
 		// Get lower and upper bounds of sequentially repeating characters
 		auto range = std::equal_range(std::begin(str), std::end(str), *i);
@@ -83,5 +84,5 @@ std::string compressString(const std::string& str)
 	std::string res = ss.str();
 
 	// Return input string if compress does not compress
-	return res.length() < str.length() ? res : str;
+	return res.size() < str.size() ? res : str;
 }

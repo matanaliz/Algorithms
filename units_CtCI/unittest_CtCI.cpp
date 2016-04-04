@@ -59,6 +59,7 @@ namespace units_CtCI
 			str = { "abc" };
 			res = compressString(str);
 
+			// Test if string was not compressed
 			Assert::IsTrue(0 == res.compare("abc"), L"PermutationString don't compress test failed");
 		}
 	};
