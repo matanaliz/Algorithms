@@ -7,11 +7,11 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace unittest_Levenshtein_distance
 {		
-	TEST_CLASS(UnitTest1)
+	TEST_CLASS(LevenshteinDistanceTest)
 	{
 	public:
 		
-		TEST_METHOD(LevDistanceEqualStringsTest)
+		TEST_METHOD(LevenshteinDistanceEqualStringsTest)
 		{
 			const std::string s1("test");
 			const std::string s2("test");
@@ -20,7 +20,7 @@ namespace unittest_Levenshtein_distance
 			Assert::IsTrue(0 == res, L"Equal strings test failed");
 		}
 
-		TEST_METHOD(LevDistanceEmptyStringsTest)
+		TEST_METHOD(LevenshteinDistanceEmptyStringsTest)
 		{
 			const std::string s1("");
 			const std::string s2("");
@@ -29,7 +29,7 @@ namespace unittest_Levenshtein_distance
 			Assert::IsTrue(0 == res, L"Empty strings test failed");
 		}
 
-		TEST_METHOD(LevDistanceOneEmptyStringsTest)
+		TEST_METHOD(LevenshteinDistanceOneEmptyStringsTest)
 		{
 			const std::string s1("");
 			const std::string s2("test");
@@ -38,7 +38,7 @@ namespace unittest_Levenshtein_distance
 			Assert::IsTrue(4 == res, L"OneEmpty strings test failed");
 		}
 
-		TEST_METHOD(LevDistanceSundayTest)
+		TEST_METHOD(LevenshteinDistanceSundayTest)
 		{
 			const std::string s1("Saturday");
 			const std::string s2("Sunday");
