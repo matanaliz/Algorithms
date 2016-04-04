@@ -12,5 +12,7 @@ int main(int argc, char* argv[])
 	char s2[] = { "hello world\0\0" };
 	replaceSpace(s2, 13);
 
+	const std::string s = { "aabbbccccd" };
+	const std::string compressed = compressString(s);
 	return 0;
 }

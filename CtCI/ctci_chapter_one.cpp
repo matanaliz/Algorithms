@@ -1,6 +1,7 @@
 #include "ctci_chapter_one.h"
 
 #include <algorithm>
+#include <sstream>
 
 bool allUnique(const std::string& str)
 {
@@ -61,11 +62,26 @@ bool isPermutation(const std::string& a, const std::string& b)
 
 std::string compressString(const std::string& str)
 {
-	std::string res;
+	std::stringstream ss;
+
 	for (auto i = std::begin(str); i != std::end(str); /**/)
 	{ 
-		auto p = std::equal_range(std::begin(str), std::end(str), *i);
+		// Get lower and upper bounds of sequentially repeating characters
+		auto range = std::equal_range(std::begin(str), std::end(str), *i);
+
+		// Get distance of repeating characters
+		auto distance = std::distance(range.first, range.second);
+		
+		// Form new string
+		ss << *i << distance;
+
+		// Advance iterator to new character
+		std::advance(i, distance);
 	}
 
-	return;
+	// Get copy of string from stream
+	std::string res = ss.str();
+
+	// Return input string if compress does not compress
+	return res.length() < str.length() ? res : str;
 }

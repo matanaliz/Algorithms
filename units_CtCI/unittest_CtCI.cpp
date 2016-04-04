@@ -51,10 +51,15 @@ namespace units_CtCI
 
 		TEST_METHOD(TestCompressString)
 		{
-			const std::string str = { "aabbbc" };
-			const std::string res = compressString(str);
+			std::string str = { "aabbbcc" };
+			std::string res = compressString(str);
 
-			Assert::IsTrue(0 == res.compare("a2b3c"), L"PermutationString test failed");
+			Assert::IsTrue(0 == res.compare("a2b3c2"), L"PermutationString test failed");
+
+			str = { "abc" };
+			res = compressString(str);
+
+			Assert::IsTrue(0 == res.compare("abc"), L"PermutationString don't compress test failed");
 		}
 	};
 }
