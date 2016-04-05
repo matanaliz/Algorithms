@@ -86,3 +86,8 @@ std::string compressString(const std::string& str)
 	// Return input string if compress does not compress
 	return res.size() < str.size() ? res : str;
 }
+
+bool isRotation(const std::string& a, const std::string& b)
+{
+
+}
