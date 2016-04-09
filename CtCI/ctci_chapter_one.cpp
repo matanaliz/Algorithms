@@ -59,6 +59,7 @@ bool isPermutation(const std::string& a, const std::string& b)
 	std::sort(std::begin(sorted_b), std::end(sorted_b));
 
 	return sorted_a.compare(sorted_b) == 0;
+
 }
 
 std::string compressString(const std::string& str)
@@ -89,5 +90,5 @@ std::string compressString(const std::string& str)
 
 bool isRotation(const std::string& a, const std::string& b)
 {
-
+	return false;
 }
