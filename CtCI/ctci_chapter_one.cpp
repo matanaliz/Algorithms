@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <sstream>
+#include <utility>
 
 bool allUnique(const std::string& str)
 {
@@ -20,7 +21,7 @@ void reverseString(char* str)
 	while (*tmp++) len++;
 
 	for (size_t i = 0; i < len / 2; i++)
-		std::swap(*(str + i), *(str + len - i - 1));
+		std::swap(str[i], str[len - i - 1]);
 }
 
 void replaceSpace(char* str, size_t len)
@@ -88,7 +89,53 @@ std::string compressString(const std::string& str)
 	return res.size() < str.size() ? res : str;
 }
 
+void rotateMatrix(int* matrix, size_t n)
+{
+	// Transpose and reverse rows
+	for (size_t i = 0; i < n; ++i)
+		for (size_t j = 0; j < n; ++j)
+		{
+			std::swap(matrix[i + n * j], matrix[j + n * i]);
+		}
+
+	
+	for (size_t i = 0; i < n; ++i)
+		for (size_t k = 0; k < n / 2; ++k)
+			std::swap(matrix[i], matrix[n - k - 1]);
+
+}
+
+void zerofyMatrix(int* matrix, size_t rows, size_t columns)
+{
+	std::vector<bool> zero_rows(rows, false);
+	std::vector<bool> zero_cols(columns, false);
+
+	for (size_t i = 0; i < columns; ++i)
+		for (size_t j = 0; j < rows; ++j)
+			if (0 == matrix[j + columns * i])
+    			{
+				zero_rows[j] = true;
+				zero_cols[i] = true;
+			}
+
+	for (size_t i = 0; i < columns; ++i)
+		for (size_t j = 0; j < rows; ++j)
+			if (zero_rows[j] || zero_cols[i])
+				matrix[j + columns * i] = 0;	
+			
+}
+
 bool isRotation(const std::string& a, const std::string& b)
 {
+    if (a.size() == b.size() && a.size() > 0)
+    {
+        const auto aa = a + a;
+
+        if (aa.find(b) != std::string::npos)
+            return true;
+    }
+	
 	return false;
 }
+
+
