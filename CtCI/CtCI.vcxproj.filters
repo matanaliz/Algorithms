@@ -21,9 +21,15 @@
     <ClCompile Include="ctci_chapter_one.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ctci_chapter_two.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ctci_chapter_one.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ctci_chapter_two.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
